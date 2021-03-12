@@ -50,4 +50,4 @@ add volunteer
 Database =>
   CREATE DATABASE volunteer_tracker
   CREATE TABLE projects (title varchar, id serial PRIMARY KEY)
-  CREATE TABLE volunteers (name varchar , project_id varchar, id serial PRIMARY KEY)
+  CREATE TABLE volunteers (name varchar , project_id int, id serial PRIMARY KEY)

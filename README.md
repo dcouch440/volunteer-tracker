@@ -1,27 +1,24 @@
-# Volunteer Tracker
-#### *Created By: David Couch*
+# `Volunteer Tracker`
+#### *_Created By: David Couch_*
 
-#### **
+#### *Track Volunteers From *
 * * *
 
-## Description
-This is an application for learning TDD with ruby while attending Epicodus coding school. This app Might be un finished and does not represent my class mates or my own coding knowledge.
+## `Description`
+This is an app made to take advantage of sql and REST routing technologies. This is a week three project while attending school at Epicodus. This app uses Sinatra REST routing to navigate through the website and use parameters to query a postgres server.
+* * *
+
+## `Technologies used`
+
+* `Ruby`
+* `Rspec`
+* `Sinatra`
+* `Capybara`
+* `PostgresSQL`
 
 * * *
 
-## Technologies used
-
-* Ruby
-* Rspec
-* Sinatra
-* Capybara
-* PostgresSQL
-
-* * *
-
-## Installation :
-### Want to see this webpage now?
-
+## `Installation :`
 
 * Go to ( {http repo} ).
 * Navigate to the code button on the github website.
@@ -31,6 +28,7 @@ This is an application for learning TDD with ruby while attending Epicodus codin
 - Copy the HTTPS code by clicking the clipboard next to the link.
 
 - Within your Bash terminal navigate to your desired location by using cd followed by your desired directory.
+
 ```bash
  cd Desktop
 ```
@@ -87,12 +85,54 @@ gem install bundler
 ``` bash
 bundle install
 ```
+
 * Then from the terminal you can run logical code through the terminal by typing
 ```bash
 ruby "file goes here (no quotes)"
 ```
+## `Postgres setup`
 
-## Testing
+* Please view <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres"> the Epicodus website </a> for setup instructions.
+* Here are some Postgres commands to make your server
+```bash
+	CREATE DATABASE =>         >
+	DROP DATABASE   => (db)    >
+	CREATE TABLE    => (table) > (name type, ...);
+	ALTER TABLE     => (table) > ADD name type;
+	INSERT INTO     => (table) > (name, ...) VALUES (name, ...);
+	ALTER TABLE     => (table) > ADD id serial PRIMARY KEY;
+	ALTER TABLE     => (table) > DROP (name);
+	SELECT * FROM   => (table) >
+	UPDATE          => (table) > SET (name) = 'data', (name) = 'data' WHERE (conditional)
+	SELECT * FROM   => (table) > WHERE (name) BETWEEN (num) AND (num);
+	SELECT * FROM   => (table) > WHERE (name) > 2 AND (name) < 3;
+	CREATE DATABASE => (table_test) > WITH TEMPLATE (table);
+```
+* Note: Its recommended to create a test database. Please see the line above for how its done.
+
+### `Recommended Table Names`
+```bash
+  Production Database: volunteer_tracker
+  Development Database: volunteer_tracker_test
+```
+### `Useful commands`
+```bash
+	\?  => list of commands
+	 q  => exit from menu
+	\c  => change directory (database)
+	\d  => list table information
+	\dt => list all tables
+	 %  => represents a wild card 'Li%' the percent has any value
+	\x  => change orientation
+```
+
+#### `These Tables`
+* Commands for the server made in this app
+```bash
+  CREATE TABLE projects (title varchar, id serial PRIMARY KEY)
+  CREATE TABLE volunteers (name varchar , project_id int, id serial PRIMARY KEY)
+```
+## `Testing`
 * This project was created using **test-driven development** (TDD).
 
 * To view the test suite, open PLACEHOLDER
@@ -114,17 +154,17 @@ rspec
   <img src="public/img/rspec-p.PNG" alt="Passing RSpec test">
 </div>
 
-## Addition comments:
+## `Addition comments:`
 * Created on 8/16/21
 
 
 * * *
 
-## Contact Information
+## `Contact Information`
 _David Couch: [Email](dcouch440@gmail.com)_
 * * *
 
-## License
+## `License`
 > [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
 > David Couch &copy; 2021
 * * *
