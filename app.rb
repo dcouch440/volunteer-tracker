@@ -28,5 +28,17 @@ end
 
 get ('/projects/:id') do
   @project = Project.find(params[:id])
-  erb :project
+  @volunteers = @project.volunteers
+  erb :project_show
+end
+
+
+get ('/projects/:id/volunteers/:vid') do
+  @volunteer = Volunteer.find(params[:vid])
+  erb :volunteer_show
+end
+
+post ('/projects/:id/volunteers/:vid') do
+  @volunteer = Volunteer.find(params[:vid])
+  @volunteer.update(params[:name])
 end

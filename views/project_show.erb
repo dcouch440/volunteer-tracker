@@ -1,0 +1,27 @@
+<div id="list">
+  <%=
+    @projects.map { |project|
+      <<-HERE
+        <p>
+          <a href="projects/#{project.id}">
+            #{project.title}
+          </a>
+        </p>
+      HERE
+    }.map(&:strip).join('')
+  %>
+</div>
+
+<div>
+  <%=
+    @volunteers && @volunteers.map {|volunteer|
+      <<-HERE
+        <p>
+          <a href="projects/#{volunteer.project_id}/volunteers/#{volunteer.id}">
+            #{volunteer.name}
+          </a>
+        /p>
+      HERE
+    }.map(&:strip).join('')
+  %>
+</div>
