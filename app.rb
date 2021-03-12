@@ -5,7 +5,6 @@
   'pry',
   './lib/project',
   './lib/volunteer',
-  './db'
 
 ].each { |data| (require data) }
 

@@ -1,4 +1,5 @@
 class Volunteer
+
   attr_accessor :name, :project_id, :id
   def initialize(attr)
     @name = attr.fetch(:name)
@@ -44,4 +45,5 @@ class Volunteer
     @name = attr.fetch(:name)
     DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id}")
   end
+
 end

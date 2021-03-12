@@ -62,5 +62,4 @@ class Project
     volunteers
   end
 
-
 end
