@@ -11,7 +11,6 @@
 
 also_reload 'lib/**/*.rb'
 
-
 get ('/') do
   @projects = Project.all()
   erb :projects
@@ -46,9 +45,26 @@ delete ('/project/:id') do
   redirect to '/'
 end
 
+get ('/projects/:id/volunteers/new') do
+  @project = Project.find(params[:id])
+  erb :volunteer_new
+end
+
+post ('/projects/:id/volunteers') do
+  volunteer = Volunteer.new({:name => params[:name] , :id => nil, :project_id => params[:id]})
+  volunteer.save()
+  redirect to "/projects/#{params[:id]}/volunteers/#{volunteer.id}"
+end
+
 get ('/projects/:id/volunteers/:vid') do
   @volunteer = Volunteer.find(params[:vid])
   erb :volunteer_show
+end
+
+patch ('/projects/:id/volunteers/:vid') do
+  @volunteer = Volunteer.find(params[:vid])
+  @volunteer.update({:name => params[:name]})
+  redirect to "/projects/#{params[:id]}/volunteers/#{@volunteer.id}"
 end
 
 post ('/projects/:id/volunteers/:vid') do
