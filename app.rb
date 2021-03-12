@@ -13,7 +13,7 @@ also_reload 'lib/**/*.rb'
 
 
 get ('/') do
-  @projects = Projects.all()
+  @projects = Project.all()
   erb :projects
 end
 

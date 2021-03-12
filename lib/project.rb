@@ -7,6 +7,7 @@ class Project
   end
 
   def save()
+
     @id = DB.exec(
       "INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id"
     ).first["id"].to_i()
@@ -19,11 +20,10 @@ class Project
   def self.all()
     projects = []
     all_projects = DB.exec("SELECT * FROM projects")
-
     all_projects.each do |project|
       projects << Project.new({
         :title => project['title'],
-        :id => project['project'].to_i()
+        :id => project['id'].to_i()
       })
     end
 
