@@ -20,8 +20,8 @@ Your README should also include any important instructions for setting up and us
 
 _PAGE SET UP_##############################################
 
-Front page > 
-  form to create project > one field -> submit button -> 
+Front page >
+  form to create project > one field -> submit button ->
     takes you to the project page -> project/:id
 
     visit '/'
@@ -30,8 +30,8 @@ Front page >
     expect(page).to have_content('Teaching Kids to Code')
 
 change page >
-  from home > 
-    LINK   > click on project (already made) 
+  from home >
+    LINK   > click on project(name) (already made)
     BUTTON > click on "Edit Project"
     INPUT  > fill in "title"
     BUTTON > click on "Update Project"
@@ -47,7 +47,7 @@ add volunteer
     BUTTON > click on "Update Volunteer"
 
 
-Database => 
+Database =>
   CREATE DATABASE volunteer_tracker
   CREATE TABLE projects (title varchar, id serial PRIMARY KEY)
   CREATE TABLE volunteers (name varchar , project_id varchar, id serial PRIMARY KEY)

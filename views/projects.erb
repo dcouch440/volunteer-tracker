@@ -1,0 +1,11 @@
+<div id="list">
+  <%=
+    @projects.map { |project|
+      <<-HERE
+        <p>
+          <a href="projects/#{project.id}">#{project.title}</a>
+        </p>
+      HERE
+    }.map(&:strip).join('')
+  %>
+</div>
