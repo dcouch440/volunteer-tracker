@@ -3,7 +3,7 @@ require "project"
 require "rspec"
 require "pry"
 require "pg"
-require "./test_db"
+require_relative "./test_db"
 
 RSpec.configure do |config|
   config.after(:each) do
