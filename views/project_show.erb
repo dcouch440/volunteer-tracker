@@ -7,16 +7,14 @@
       HERE
   %>
 </div>
-
+<a href="/projects/<%=@project.id%>/edit">Edit Project</a>
 <div>
   <%=
     @volunteers && @volunteers.map {|volunteer|
       <<-HERE
         <p>
-          <a href="projects/#{volunteer.project_id}/volunteers/#{volunteer.id}">
-            #{volunteer.name}
-          </a>
-        /p>
+          <a href="projects/#{volunteer.project_id}/volunteers/#{volunteer.id}">#{volunteer.name}</a>
+        </p>
       HERE
     }.map(&:strip).join('')
   %>

@@ -29,15 +29,21 @@ get ('/projects/:id') do
   erb :project_show
 end
 
+get ('/projects/:id/edit') do
+  @project = Project.find(params[:id])
+  erb :project_edit
+end
+
 patch ('/projects/:id') do
   @project = Project.find(params[:id])
   @project.update(params)
+  redirect to "/projects/#{@project.id}"
 end
 
 delete ('/project/:id') do
   @project = Project.find(params[:id])
   @project.delete()
-  redirect to '/projects'
+  redirect to '/'
 end
 
 get ('/projects/:id/volunteers/:vid') do
