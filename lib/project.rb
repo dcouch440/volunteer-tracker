@@ -19,20 +19,23 @@ class Project
   def self.all()
     projects = []
     all_projects = DB.exec("SELECT * FROM projects")
-    
+
     all_projects.each do |project|
-      title = project['title']
-      id = project['project'].to_i()
-      projects << Project.new({:title => title, :id => id})
+      projects << Project.new({
+        :title => project['title'],
+        :id => project['project'].to_i()
+      })
     end
-  
+
     projects
   end
 
   def self.find(id)
     found = DB.exec("select * FROM projects WHERE id = #{id}").first()
-    id , title = found.values_at("id", "title")
-    Project.new({:id => (id.to_i), :title => title})
+    Project.new({
+      :title => found['title'],
+      :id => found['id'].to_i()
+    })
   end
 
   def update(attr)
@@ -40,8 +43,24 @@ class Project
     DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id}")
   end
 
-  def delete 
+  def delete
     DB.exec("DELETE FROM projects WHERE id = #{@id}")
   end
+
+  def volunteers
+    volunteers = []
+    all_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id}")
+
+    all_volunteers.each do |volunteer|
+      volunteers << Volunteer.new({
+        :name => volunteer['name'],
+        :project_id => volunteer['project_id'],
+        :id => volunteer['id'].to_i()
+      })
+    end
+
+    volunteers
+  end
+
 
 end
