@@ -13,17 +13,14 @@ also_reload 'lib/**/*.rb'
 
 
 get ('/') do
-  erb :projects_new
-end
-
-get ('/projects') do
   @projects = Projects.all()
+  erb :projects
 end
 
 post ('/projects') do
   project = Project.new({:id => nil, :title => params[:title]})
   project.save()
-  redirect to "/projects/#{project.id}"
+  redirect to "/"
 end
 
 get ('/projects/:id') do
@@ -32,6 +29,16 @@ get ('/projects/:id') do
   erb :project_show
 end
 
+patch ('/projects/:id') do
+  @project = Project.find(params[:id])
+  @project.update(params)
+end
+
+delete ('/project/:id') do
+  @project = Project.find(params[:id])
+  @project.delete()
+  redirect to '/projects'
+end
 
 get ('/projects/:id/volunteers/:vid') do
   @volunteer = Volunteer.find(params[:vid])
@@ -40,5 +47,5 @@ end
 
 post ('/projects/:id/volunteers/:vid') do
   @volunteer = Volunteer.find(params[:vid])
-  @volunteer.update(params[:name])
+  @volunteer.update(params)
 end

@@ -1,0 +1,16 @@
+  <form action="/projects/<%=volunteer.project_id%>" method="post">
+    <input name="_method" type="hidden" value="patch">
+
+    <label for="title">Update Title</label>
+    <input id="title" name="title" type="text" required>
+
+    <button type="submit">Update Title</button>
+  </form>
+
+
+<form action="/project/<%= @album.id %>" method="post">
+  <div class="form-group">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit">Delete Project</button>
+  </div>
+</form>

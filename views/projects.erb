@@ -1,0 +1,19 @@
+  <form action="/projects" method="post">
+
+    <label for="title">Add a project</label>
+    <input id="title" name="title" type="text" required>
+
+    <button type="submit">Create Project</button>
+  </form>
+
+  <%=
+    @projects && @projects.map { |project|
+      <<-HERE
+        <p>
+          <a href="projects/#{@project.id}">
+            #{@project.title}
+          </a>
+        </p>
+      HERE
+    }
+  %>
