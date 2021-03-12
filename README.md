@@ -1,7 +1,7 @@
 # `Volunteer Tracker`
 #### *_Created By: David Couch_*
 
-#### *Track Volunteers From *
+#### *Track Volunteers For Your Project!*
 * * *
 
 ## `Description`
