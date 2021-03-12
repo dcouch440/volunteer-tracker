@@ -3,7 +3,8 @@ require "project"
 require "rspec"
 require "pry"
 require "pg"
-require_relative "./test_db"
+
+DB = PG.connect({:dbname => 'volunteer_tracker_test'})
 
 RSpec.configure do |config|
   config.after(:each) do
