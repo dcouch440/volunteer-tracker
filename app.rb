@@ -1,13 +1,9 @@
-[
-  'sinatra',
-  'sinatra/reloader',
-  'pg',
-  'pry',
-  './lib/project',
-  './lib/volunteer',
-
-].each { |data| (require data) }
-
+require 'sinatra'
+require 'sinatra/reloader'
+require 'pg'
+require 'pry'
+require './lib/project'
+require './lib/volunteer'
 also_reload 'lib/**/*.rb'
 
 DB = PG.connect({:dbname => 'volunteer_tracker'})

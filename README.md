@@ -15,7 +15,6 @@ This is an app made to take advantage of sql and REST routing technologies. This
 * `Sinatra`
 * `Capybara`
 * `PostgresSQL`
-
 * * *
 
 ## `Installation :`
@@ -256,8 +255,6 @@ rspec
 
 ## `Addition comments:`
 * Created on 8/16/21
-
-
 * * *
 
 ## `Contact Information`

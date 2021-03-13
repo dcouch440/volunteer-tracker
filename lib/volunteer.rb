@@ -7,7 +7,7 @@ class Volunteer
     @id = attr.fetch(:id)
   end
 
-  def self.all
+  def self.all()
     volunteers = []
     all_volunteers = DB.exec("SELECT * FROM volunteers")
 
@@ -22,7 +22,7 @@ class Volunteer
     volunteers
   end
 
-  def save
+  def save()
     @id = DB.exec(
       "INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', '#{@project_id}') RETURNING id"
     ).first["id"].to_i()
