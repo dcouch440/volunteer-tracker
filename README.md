@@ -14,7 +14,7 @@ This is an app made to take advantage of sql and REST routing technologies. This
 * `Rspec`
 * `Sinatra`
 * `Capybara`
-* `PostgresSQL`
+* `PostgreSQL`
 * * *
 
 ## `Installation :`
